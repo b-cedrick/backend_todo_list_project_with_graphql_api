@@ -1,0 +1,39 @@
+{
+  "name": "graphql-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Cédrick",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon -w src --ext ts --exec ts-node ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://........................................"
+  },
+  "keywords": [
+    "graphql",
+    "typescript",
+    "nodejs",
+    "typeorm"
+  ],
+  "bugs": {
+    "url": "http://...",
+    "homepage": "https://github.com/.......................#readme"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.3",
+    "ts-node": "8.9.1",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "apollo-server": "2.12.0",
+    "graphql": "14.1.1",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "0.1.13",
+    "type-graphql": "0.17.6",
+    "typeorm": "0.2.24",
+    "typeorm-encrypted": "0.5.4"
+  }
+}
