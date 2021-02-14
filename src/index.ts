@@ -2,7 +2,7 @@ import { createConnection } from 'typeorm';
 import { ApolloServer } from 'apollo-server';
 import { buildSchema } from 'type-graphql';
 import { UserResolver } from './resolvers/userResolver';
-
+const { env, test } = require('./config/config');  
 
 async function runServer() {
   const connection = await createConnection();
@@ -11,9 +11,10 @@ async function runServer() {
   });
 
   const server = new ApolloServer({ schema });
-  await server.listen(8000);
+  const port = env.PORT;
+  await server.listen(`${port}`);
 
-  console.log('Server started at port ::8000');
+  console.log('Server started at port ::'+`${port}`);
 }
 
 
