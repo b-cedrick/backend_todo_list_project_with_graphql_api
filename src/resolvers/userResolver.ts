@@ -26,6 +26,7 @@ export class UserResolver {
   @Mutation(() => User)
   async addUser(@Arg("data") data: CreateUserInput) {
     const user = User.create(data);
+    console.log("Data : ",data)
     await user.save();
     return user;
   }

@@ -7,8 +7,8 @@ module.exports = {
 	username: process.env.DB_USERNAME,
 	password: process.env.DB_PASSWORD,
 	database: process.env.DB_NAME,
-	synchronize: true,
-   logging: false,
+	synchronize: false,  // Not recommended to set to true , use migration instead
+   logging: true,
    entities: [
        "src/models/entities/**/*.ts"
     ],
@@ -17,5 +17,10 @@ module.exports = {
     ],
     subscribers: [
        "src/subscribers/**/*.ts"
-    ]
+    ],
+    "cli": {
+      "entitiesDir": "src/models/entities",
+      "migrationsDir": "src/migrations",
+      "subscribersDir": "src/subscribers"
+  }
 };

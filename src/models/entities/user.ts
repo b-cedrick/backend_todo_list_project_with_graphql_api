@@ -3,7 +3,7 @@ import { ObjectType, Field, ID } from 'type-graphql';
 import { EncryptionTransformer } from 'typeorm-encrypted';
 
 @ObjectType()
-@Entity()
+@Entity("users")
 export class User extends BaseEntity {
 
   @Field(() => ID)

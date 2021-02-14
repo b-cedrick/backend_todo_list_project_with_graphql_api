@@ -12,7 +12,7 @@ const getVariables = ()=> {
   const { parsed: envs } = result;
   //  Additional non-environment variables
   const noneEnvVaribkles = {
-    EXAMPLE: "additional content from NON-ENVIRONMENT VARIABLES"
+    // EXAMPLE: "additional content from NON-ENVIRONMENT VARIABLES"
   }
   //  Append non-environment variables
   Object.assign(envs, noneEnvVaribkles);

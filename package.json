@@ -8,6 +8,10 @@
     "start": "ts-node ./src/index.ts",
     "dev": "NODE_ENV=development nodemon -w src --ext ts --exec ts-node ./src/index.ts",
     "prod": "NODE_ENV=production ts-node ./src/index.ts",
+    "migration-create": "ts-node ./node_modules/typeorm/cli.js migration:create -n",
+    "migration-run": "ts-node ./node_modules/typeorm/cli.js migration:run -f .env.development",
+    "migration-revert": "ts-node ./node_modules/typeorm/cli.js migration:revert",
+    "typeorm": "ts-node ./node_modules/typeorm/cli.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,7 +37,7 @@
     "apollo-server": "2.12.0",
     "dotenv": "^8.2.0",
     "graphql": "14.1.1",
-    "mysql": "^2.18.1",
+    "mysql2": "npm:mysql2@^2.1.0",
     "reflect-metadata": "0.1.13",
     "type-graphql": "0.17.6",
     "typeorm": "0.2.24",
