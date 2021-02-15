@@ -1,4 +1,5 @@
 import { ObjectType ,Field } from 'type-graphql';
+import { Task } from '../models/entities/task';
 import { User } from '../models/entities/user';
 
 @ObjectType()
@@ -26,4 +27,10 @@ export class LoginResponse extends CommonResponse {
 export class SignInResponse extends CommonResponse {
   @Field({ nullable: true })
   token: string;
+}
+
+@ObjectType()
+export class TaskResponse extends CommonResponse {
+  @Field({ nullable: true })
+  data: Task
 }

@@ -30,7 +30,7 @@ export class UserResolver {
     @Ctx() context: any
     ) {
       if(context.isAuth && context.user.isAdmin) {
-        const user = User.create(data);
+        const user = await User.create(data);
         console.log("Data : ",data)
         await user.save();
         if (!user) return {success: false, message:"Echec d'ajout d'utilidsateur, veuillez réessayer"}
@@ -52,7 +52,7 @@ export class UserResolver {
     
         Object.assign(user, data);
         const newUser = await user.save();    
-        if (!newUser) return {success: false, message:"Echec de suppression d'utilisateur, veuillez réessayer"}
+        if (!newUser) return {success: false, message:"Echec de mise à jourd'utilisateur, veuillez réessayer"}
         console.log(newUser)
         return {data: newUser, success: true};
       }      
@@ -80,7 +80,7 @@ export class UserResolver {
   @Mutation(() => SignInResponse)
   async signupUser (@Arg("data") data: SignupUserInput){
     Object.assign(data, {isAdmin: false});
-    const user = User.create(data);
+    const user = await User.create(data);
     await user.save();
     if (!user) return {success: false, message:"Echec d'inscription, veuillez réessayer"}
     const token = jwt.sign({user}, env.JWT_SECRET)
